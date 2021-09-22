@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -40,6 +39,7 @@ body {
 .boxe {
     height: 50px;
     width: 50px;
+    border-radius: 50%;
 }
 
 .vermelho {
@@ -47,7 +47,7 @@ body {
 }
 
 .vermelho:hover {
-    background-color: orangered;
+    background-color: rgb(20, 6, 0);
     /* Transição */ 
     transition-property: background-color;
     transition-duration: 1s;
@@ -58,7 +58,7 @@ body {
 }
 
 .laranja:hover {
-    background-color: red;
+    background-color: rgb(92, 8, 8);
     /* Transformação */
     transform: scale(1.5) translateY(-10px);
     /*
@@ -68,7 +68,9 @@ body {
         translate();
     */
     /* Transição */ 
-    transition-property: transform, background-color;
+    transition-property: background-color;
+    transition-duration: 2s;
+    transition-property: transform;
     transition-duration: 1s;
 }
 
@@ -83,14 +85,65 @@ body {
 /* Keyframe */
 @keyframes animar-boxe {
     0% {
-        opacity: 100%;
+        opacity: 0%;
+    }
+    10% {
+        opacity: 10%;
+        background-color: rgb(50, 205, 89);
+        transform: scale(1.1) translateX(50px)
+    }
+    20% {
+        opacity: 20%;
+        background-color: rgb(50, 205, 115);
+        transform: scale(1.2) translateX(100px)
+    }
+    30% {
+        
+        opacity: 30%;
+        background-color: rgb(205, 68, 50);
+        transform: scale(1.3) translateX(150px)
+    }
+    40% {
+        
+        opacity: 40%;
+        background-color: rgb(205, 169, 50);
+        transform: scale(1.4) translateX(200px)
     }
     50% {
+        
         opacity: 50%;
+        background-color: rgb(135, 50, 205);
+        transform: scale(1.5) translateX(250px)
+    }
+    60% {
+        
+        opacity: 60%;
+        background-color: rgb(205, 50, 171);
+        transform: scale(1.6) translateX(300px)
+    }
+    70% {
+        
+        opacity: 70%;
+        background-color: rgb(205, 50, 102);
+        transform: scale(1.7) translateX(350px)
+    }
+    80% {
+        
+        opacity: 80%;
+        background-color: rgb(50, 97, 205);
+        transform: scale(1.8) translateX(400px)
+    }
+    90% {
+        
+        opacity: 90%;
+        background-color: rgb(50, 97, 205);
+        transform: scale(1.9) translateX(450px)
     }
     100% {
         
         opacity: 100%;
+        background-color: rgb(50, 97, 205);
+        transform: scale(2.0) translateX(500px)
     }
 }
 
@@ -98,9 +151,56 @@ body {
     background-color: yellowgreen;
 }
 
-.verde:hover  {
+.vermelho  {
     /* Atributos de animação */
     animation-name: animar-boxe;
-    animation-duration: 1s;
+    animation-duration: 10s;
+    transition-timing-function: ease;
     animation-iteration-count: infinite;
 }
+
+button{
+    width:100px;
+    height:50px;
+    border-radius:10px;
+    background-color:aquamarine;
+    font-size: 20px;
+    border:2 px solid black;
+}
+
+button:hover{
+    width:105px;
+    height:52px;
+    background-color:rgb(24, 163, 117);
+    font-size: 22px;
+    border:2 px solid black;
+    color:rgb(245, 244, 244);
+    transition-property: background-color, width, height, font-size;
+    transition-duration: 0.4s;
+}
+
+
+.logo img{
+    width: 100px;
+    height:100px;
+}
+
+@keyframes animar-logo {
+    0% {
+        transform: rotate(0deg) translateX(0px)
+    }
+    50% {                
+        transform: rotate(180deg) translateX(150px)
+    }
+    100% {                
+        transform: rotate(360deg) translateX(300px)
+    }
+}
+
+.logo img:hover{    
+    animation-name: animar-logo;
+    animation-duration: 2s;    
+    
+}
+
+
